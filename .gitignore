@@ -1,0 +1,5 @@
+# Dependencias de desarrollo (se reinstalan con "npm install")
+node_modules/
+
+# Instrucciones privadas para Claude Code (contienen notas internas, no se publican)
+CLAUDE.md

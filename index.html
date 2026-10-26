@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Seguridad: solo se cargan recursos de este mismo sitio, sin excepciones (ver CLAUDE.md 4.3) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- SEO básico -->
+  <title data-i18n="meta.title">Carlos Mario Hoyos Ríos | Ingeniero de Datos – Data Engineer</title>
+  <meta name="description" content="Carlos Mario Hoyos Ríos, Ingeniero de Datos en Cali, Colombia. Pipelines ETL/ELT en AWS, dbt, Dagster, Python y Power BI que convierten datos en decisiones de negocio.">
+  <meta name="author" content="Carlos Mario Hoyos Ríos">
+  <link rel="canonical" href="https://ingcarlosmariohoyos.github.io/">
+
+  <!-- Open Graph (vista previa en LinkedIn, WhatsApp, Facebook) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ingcarlosmariohoyos.github.io/">
+  <meta property="og:title" content="Carlos Mario Hoyos Ríos | Ingeniero de Datos – Data Engineer">
+  <meta property="og:description" content="Pipelines confiables que convierten datos en decisiones de negocio.">
+  <meta property="og:image" content="https://ingcarlosmariohoyos.github.io/assets/img/banner.png">
+  <meta property="og:image:alt" content="Banner de Carlos Mario Hoyos Ríos, Ingeniero de Datos">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Carlos Mario Hoyos Ríos | Ingeniero de Datos – Data Engineer">
+  <meta name="twitter:description" content="Pipelines confiables que convierten datos en decisiones de negocio.">
+  <meta name="twitter:image" content="https://ingcarlosmariohoyos.github.io/assets/img/banner.png">
+
+  <!-- Favicon: iniciales "CH" con un nodo encendido -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Tipografía: Inter y JetBrains Mono alojadas en assets/fonts (las declara styles.css).
+       preload: el navegador empieza a bajar Inter de inmediato, sin esperar a leer el CSS -->
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- i18n.js con "defer": no bloquea el primer pintado y se ejecuta antes de que main.js arranque (DOMContentLoaded) -->
+  <script src="js/i18n.js" defer></script>
+  <!-- Sin "defer" a propósito: main.js marca que JS está activo antes de pintar la página
+       (así el menú móvil no "parpadea") y arranca el resto cuando el HTML termina de cargar -->
+  <script src="js/main.js"></script>
+</head>
+<body>
+  <!-- Enlace para saltar al contenido: ayuda a quien navega con teclado o lector de pantalla -->
+  <a class="skip-link" href="#contenido" data-i18n="skip">Saltar al contenido</a>
+
+  <!-- Sprite de iconos: cada icono se define una vez y se reutiliza con <use href="#icon-..."> -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-linkedin" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="m3 6 9 7 9-7"/>
+      </g>
+    </symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/>
+      </g>
+    </symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <!-- ===== Hero: primera pantalla completa ===== -->
+  <header class="hero" id="inicio">
+    <!-- Red de nodos decorativa (misma identidad del banner). aria-hidden: los lectores de pantalla la ignoran -->
+    <svg class="hero__network" viewBox="0 0 560 300" aria-hidden="true" focusable="false">
+      <g class="hero__lines">
+        <line x1="40" y1="60" x2="190" y2="120" />
+        <line x1="190" y1="120" x2="320" y2="40" />
+        <line x1="320" y1="40" x2="440" y2="110" />
+        <line x1="440" y1="110" x2="530" y2="30" />
+        <line x1="190" y1="120" x2="260" y2="230" />
+        <line x1="260" y1="230" x2="440" y2="110" />
+        <line x1="90" y1="200" x2="260" y2="230" />
+        <line x1="440" y1="110" x2="500" y2="250" />
+      </g>
+      <g class="hero__nodes">
+        <circle cx="40" cy="60" r="4" />
+        <circle cx="190" cy="120" r="6" />
+        <circle cx="320" cy="40" r="4" />
+        <circle cx="440" cy="110" r="6" />
+        <circle cx="530" cy="30" r="3" />
+        <circle cx="260" cy="230" r="5" />
+        <circle cx="90" cy="200" r="3" />
+        <circle cx="500" cy="250" r="4" />
+      </g>
+    </svg>
+
+    <div class="hero__inner">
+      <h1>Carlos Mario Hoyos Ríos</h1>
+      <p class="hero__title" data-i18n="hero.title">Ingeniero de Datos | Data Engineer</p>
+      <p class="hero__subtitle" data-i18n="hero.subtitle">Pipelines confiables que convierten datos en decisiones de negocio</p>
+      <p class="hero__location" data-i18n="hero.location">Cali, Colombia · Disponible para trabajo presencial, híbrido o remoto</p>
+
+      <!-- Bloque "dos perfiles en uno": cada perfil tiene su botón de CV, así se elige la versión sin JS -->
+      <section class="profiles" aria-labelledby="perfiles-titulo">
+        <h2 class="profiles__label" id="perfiles-titulo" data-i18n="profiles.label">Dos perfiles</h2>
+
+        <article class="profile">
+          <h3>Data Engineer</h3>
+          <ul class="profile__skills">
+            <li data-i18n="profiles.de.skill1">Pipelines ETL/ELT y arquitectura medallion</li>
+            <li data-i18n="profiles.de.skill2">Python, SQL, dbt y Dagster</li>
+            <li data-i18n="profiles.de.skill3">Data Lake en AWS (S3, Athena)</li>
+          </ul>
+          <a class="btn" href="assets/cv/CV_Carlos_Mario_Hoyos_Data_Engineer.pdf" download>
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-download"/></svg>
+            <span data-i18n="profiles.de.cv">Descargar CV – Data Engineer</span>
+          </a>
+        </article>
+
+        <article class="profile">
+          <h3 data-i18n="profiles.bi.title">Analista de Datos / BI</h3>
+          <ul class="profile__skills">
+            <li data-i18n="chip.powerbi">Power BI (DAX, modelado)</li>
+            <li data-i18n="profiles.bi.skill2">SQL avanzado y modelado dimensional</li>
+            <li data-i18n="chip.excel">Excel avanzado</li>
+          </ul>
+          <a class="btn" href="assets/cv/CV_Carlos_Mario_Hoyos_Analista_Datos_BI.pdf" download>
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-download"/></svg>
+            <span data-i18n="profiles.bi.cv">Descargar CV – Analista de Datos / BI</span>
+          </a>
+        </article>
+      </section>
+
+      <!-- Enlaces sociales: solo icono a la vista; el texto oculto es el nombre para lectores de pantalla -->
+      <ul class="social" aria-label="Redes y contacto" data-i18n-attr="aria-label:social.label">
+        <li>
+          <a class="social__link" href="https://www.linkedin.com/in/carlosmario-hoyosrios" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"/></svg>
+            <span class="visually-hidden">LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a class="social__link" href="https://github.com/ingcarlosmariohoyos" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg>
+            <span class="visually-hidden">GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a class="social__link" href="mailto:carloshoyosrios@gmail.com">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-mail"/></svg>
+            <span class="visually-hidden" data-i18n="social.mail">Correo</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Ondas inferiores, como en el banner -->
+    <svg class="hero__waves" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M0 50 C 240 30, 480 30, 720 45 S 1200 25, 1440 60" />
+      <path d="M0 65 C 260 50, 520 55, 760 60 S 1180 40, 1440 75" />
+    </svg>
+  </header>
+
+  <!-- ===== Índice pipeline: barra fija en móvil, columna con nodos en escritorio.
+       main.js (initActiveSection) enciende el nodo de la sección que se está leyendo ===== -->
+  <nav class="site-nav" aria-label="Secciones del sitio" data-i18n-attr="aria-label:nav.label">
+    <a class="site-nav__brand" href="#inicio">Carlos Hoyos</a>
+    <!-- Idioma: solo se muestra con JS (sin JS no podría cambiar nada) -->
+    <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:nav.lang">
+      <button class="lang-switch__btn" type="button" data-lang="es" lang="es" aria-pressed="true">ES<span class="visually-hidden"> – Español</span></button>
+      <button class="lang-switch__btn" type="button" data-lang="en" lang="en" aria-pressed="false">EN<span class="visually-hidden"> – English</span></button>
+    </div>
+    <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="menu-secciones"
+            data-label-open="Menú" data-label-close="Cerrar"
+            data-i18n-attr="data-label-open:nav.menu, data-label-close:nav.close">Menú</button>
+    <ul id="menu-secciones">
+      <li><a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+      <li><a href="#experiencia" data-i18n="nav.experience">Experiencia</a></li>
+      <li><a href="#educacion" data-i18n="nav.education">Educación</a></li>
+      <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Contenido ===== -->
+  <main id="contenido">
+
+    <!-- Sobre mí -->
+    <section class="section about" id="sobre-mi" aria-labelledby="sobre-mi-titulo">
+      <h2 class="section__title" id="sobre-mi-titulo" data-i18n="about.title">Sobre mí</h2>
+
+      <div class="about__body">
+        <picture class="about__photo">
+          <!-- srcset: el navegador elige 320 px (pantallas normales y retina) u 800 px si hiciera falta -->
+          <source srcset="assets/img/foto-320.webp 320w, assets/img/foto.webp 800w" sizes="160px" type="image/webp">
+          <img src="assets/img/foto-320.jpg" srcset="assets/img/foto-320.jpg 320w, assets/img/foto.jpg 800w" sizes="160px" loading="lazy" alt="Foto de Carlos Mario Hoyos Ríos" data-i18n-attr="alt:about.photo" width="800" height="800" decoding="async">
+        </picture>
+
+        <div class="about__text">
+          <p data-i18n="about.p1">
+            Soy Desarrollador BI con enfoque en ingeniería de datos y tengo más de 7 años de experiencia en el sector
+            bancario y financiero. Construyo pipelines ETL/ELT sobre Data Lake en AWS y los convierto en información
+            confiable para áreas de negocio como Riesgos y Captaciones.
+          </p>
+          <p data-i18n="about.p2">
+            Migré procesos ETL de Pandas a Polars y logré una mejora del 20 % en los tiempos de ejecución.
+            Soy Ingeniero de Sistemas y Especialista en Visual Analytics y Big Data. Hoy fortalezco mi perfil
+            en lakehouse (Databricks), procesamiento distribuido e IA aplicada a datos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tres datos clave -->
+      <ul class="facts">
+        <li class="facts__item"><strong class="facts__value" data-i18n="facts.years">7+ años</strong> <span data-i18n="facts.years.text">en el sector bancario y financiero</span></li>
+        <li class="facts__item"><strong class="facts__value">AWS · ETL/ELT</strong> <span data-i18n="facts.aws.text">pipelines sobre Data Lake</span></li>
+        <li class="facts__item"><strong class="facts__value">−20 %</strong> <span data-i18n="facts.polars.text">en tiempos de ejecución al migrar de Pandas a Polars</span></li>
+      </ul>
+    </section>
+
+    <!-- Stack -->
+    <section class="section" id="stack" aria-labelledby="stack-titulo">
+      <h2 class="section__title" id="stack-titulo">Stack</h2>
+
+      <div class="stack">
+        <div class="stack__group">
+          <h3 class="stack__title" data-i18n="stack.languages">Lenguajes</h3>
+          <ul class="chips">
+            <li data-i18n="chip.sqlAdvanced">SQL (avanzado)</li>
+            <li>PL/SQL</li>
+            <li>Python</li>
+            <li>Pandas</li>
+            <li>Polars</li>
+            <li>NumPy</li>
+            <li>SQLAlchemy</li>
+            <li>DAX</li>
+          </ul>
+        </div>
+
+        <div class="stack__group">
+          <h3 class="stack__title" data-i18n="stack.dataeng">Ingeniería de datos</h3>
+          <ul class="chips">
+            <li>ETL/ELT</li>
+            <li>Data Lake</li>
+            <li>Data Warehouse</li>
+            <li data-i18n="chip.dimensional">Modelado dimensional (star schema)</li>
+            <li data-i18n="chip.medallion">Arquitectura medallion</li>
+            <li data-i18n="chip.dataQuality">Calidad de datos</li>
+          </ul>
+        </div>
+
+        <div class="stack__group">
+          <h3 class="stack__title">Cloud</h3>
+          <ul class="chips">
+            <li>AWS S3</li>
+            <li>AWS Athena</li>
+            <li data-i18n="chip.fabric">Microsoft Fabric (conocimiento práctico)</li>
+          </ul>
+        </div>
+
+        <div class="stack__group">
+          <h3 class="stack__title" data-i18n="stack.orchestration">Transformación y orquestación</h3>
+          <ul class="chips">
+            <li>dbt</li>
+            <li>Dagster</li>
+            <li>Prefect</li>
+            <li>Pentaho Data Integration</li>
+          </ul>
+        </div>
+
+        <div class="stack__group">
+          <h3 class="stack__title" data-i18n="stack.distributed">Procesamiento distribuido</h3>
+          <ul class="chips">
+            <li data-i18n="chip.spark">Apache Spark / PySpark (básico)</li>
+          </ul>
+        </div>
+
+        <div class="stack__group">
+          <h3 class="stack__title" data-i18n="stack.databases">Bases de datos</h3>
+          <ul class="chips">
+            <li>Oracle</li>
+            <li>SQL Server</li>
+            <li>PostgreSQL</li>
+            <li>IBM AS/400</li>
+          </ul>
+        </div>
+
+        <div class="stack__group">
+          <h3 class="stack__title">BI</h3>
+          <ul class="chips">
+            <li data-i18n="chip.powerbi">Power BI (DAX, modelado)</li>
+            <li data-i18n="chip.excel">Excel avanzado</li>
+          </ul>
+        </div>
+
+        <div class="stack__group">
+          <h3 class="stack__title" data-i18n="stack.tools">Herramientas</h3>
+          <ul class="chips">
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+
+        <div class="stack__group">
+          <h3 class="stack__title" data-i18n="stack.learning">Aprendiendo</h3>
+          <ul class="chips chips--learning">
+            <li>Databricks</li>
+            <li>Delta Lake</li>
+            <li>Airflow</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section class="section" id="proyectos" aria-labelledby="proyectos-titulo">
+      <h2 class="section__title" id="proyectos-titulo" data-i18n="projects.title">Proyectos</h2>
+
+      <!-- Rejilla de tarjetas: 1 columna en móvil, 2 desde tablet.
+           El detalle de cada proyecto va en <details>: se abre sin JS y con teclado -->
+      <div class="projects">
+
+        <!-- Proyecto 1 -->
+        <article class="project">
+          <div class="project__header">
+            <h3 class="project__title" data-i18n="p1.title">Marketplace Data Warehouse – arquitectura medallion</h3>
+            <p class="project__meta"><span class="status status--done" data-i18n="status.done">Terminado</span> <time datetime="2026-07" data-i18n="date.jul2026">jul. 2026</time></p>
+          </div>
+          <p data-i18n="p1.summary">
+            Data warehouse de punta a punta para un marketplace tipo e-commerce (Bronze → Silver → Gold).
+          </p>
+          <details class="project__more">
+            <summary data-i18n="projects.details">Ver detalles</summary>
+            <ul class="project__details">
+              <li data-i18n="p1.d1">Ingesta con Python (Pandas, SQLAlchemy) de ventas, productos y clientes a la capa Bronze.</li>
+              <li data-i18n="p1.d2">dbt: staging en Silver y esquema en estrella en Gold (1 tabla de hechos + 5 dimensiones) con integridad referencial (PK/FK).</li>
+              <li data-i18n="p1.d3">Orquestación basada en assets con Dagster Cloud (Serverless) y schedule diario.</li>
+              <li data-i18n="p1.d4">PostgreSQL en Supabase, Docker, despliegue 100 % en la nube y documentación con diagramas.</li>
+            </ul>
+          </details>
+          <ul class="chips" aria-label="Tecnologías" data-i18n-attr="aria-label:projects.tech">
+            <li>Python</li>
+            <li>dbt</li>
+            <li>Dagster</li>
+            <li>PostgreSQL (Supabase)</li>
+            <li>Docker</li>
+          </ul>
+          <div class="project__actions">
+            <a class="btn" href="https://github.com/ingcarlosmariohoyos/marketplace_dw_project" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg>
+              <span data-i18n="projects.code">Código</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Proyecto 2 -->
+        <article class="project">
+          <div class="project__header">
+            <h3 class="project__title" data-i18n="p2.title">Análisis estadístico de Pokémon (Gen 1–6) con Python y Power BI</h3>
+            <p class="project__meta"><span class="status status--done" data-i18n="status.done">Terminado</span> <time datetime="2025-11" data-i18n="date.nov2025">nov. 2025</time></p>
+          </div>
+          <p data-i18n="p2.summary">
+            Limpieza, análisis exploratorio y visualización del dataset, con un tablero interactivo en Power BI.
+          </p>
+          <details class="project__more">
+            <summary data-i18n="projects.details">Ver detalles</summary>
+            <ul class="project__details">
+              <li data-i18n="p2.d1">Limpieza y validación del dataset (valores faltantes, outliers, formas especiales).</li>
+              <li data-i18n="p2.d2">EDA: agregaciones por generación, comparación de legendarios y megaevoluciones y segmentación de la "élite" (stats totales &gt; 600).</li>
+              <li data-i18n="p2.d3">Visualizaciones con Matplotlib y Seaborn y tablero interactivo en Power BI.</li>
+              <li data-i18n="p2.d4">Su publicación en LinkedIn superó las 17.000 impresiones.</li>
+            </ul>
+          </details>
+          <ul class="chips" aria-label="Tecnologías" data-i18n-attr="aria-label:projects.tech">
+            <li>Python</li>
+            <li>Pandas</li>
+            <li>NumPy</li>
+            <li>Matplotlib</li>
+            <li>Seaborn</li>
+            <li>Power BI</li>
+            <li>DAX</li>
+          </ul>
+          <div class="project__actions">
+            <a class="btn" href="https://github.com/ingcarlosmariohoyos/Pokemon_analytics" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg>
+              <span data-i18n="projects.code">Código</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Proyecto 3: en desarrollo. Sin botón "Código" hasta confirmar el enlace del repo -->
+        <article class="project">
+          <div class="project__header">
+            <h3 class="project__title" data-i18n="p3.title">Radar de Ofertas Laborales</h3>
+            <p class="project__meta"><span class="status status--wip" data-i18n="status.wip">En desarrollo (v1)</span></p>
+          </div>
+          <p data-i18n="p3.summary">
+            Herramienta para encontrar las ofertas con más probabilidad de éxito: recolecta, normaliza y compara
+            ofertas contra mi CV con un puntaje de 0 a 100 y una recomendación, con un tablero de seguimiento.
+          </p>
+          <details class="project__more">
+            <summary data-i18n="projects.details">Ver detalles</summary>
+            <ul class="project__details">
+              <li data-i18n="p3.d1">Hoja de ruta: v1 reglas y palabras clave (Python + SQLite) → v2 embeddings locales (sentence-transformers) → v3 automatización con Dagster → v4 opcional con modelos locales (Ollama).</li>
+              <li data-i18n="p3.d2">Principio: costo cero, solo herramientas locales y fuentes que permitan su uso.</li>
+            </ul>
+          </details>
+          <ul class="chips" aria-label="Tecnologías" data-i18n-attr="aria-label:projects.tech">
+            <li>Python</li>
+            <li>SQLite</li>
+            <li>Streamlit</li>
+          </ul>
+        </article>
+
+        <!-- Proyecto 4: próximamente. Solo la idea, en futuro. Sin resultados ni botón "Código" -->
+        <article class="project project--upcoming">
+          <div class="project__header">
+            <h3 class="project__title">Fraud Detection Lakehouse</h3>
+            <p class="project__meta"><span class="status status--soon" data-i18n="status.soon">Próximamente</span></p>
+          </div>
+          <p data-i18n="p4.summary">
+            Será un lakehouse para detección de fraude en Databricks con Delta Lake, sobre el dataset público PaySim
+            y con enfoque en prevención de lavado de activos (AML).
+          </p>
+          <ul class="chips" aria-label="Stack planeado" data-i18n-attr="aria-label:projects.plannedStack">
+            <li>Databricks</li>
+            <li>Delta Lake</li>
+            <li>dbt</li>
+            <li>MLflow</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Experiencia (línea de tiempo con nodos, como el índice pipeline) -->
+    <section class="section" id="experiencia" aria-labelledby="experiencia-titulo">
+      <h2 class="section__title" id="experiencia-titulo" data-i18n="exp.title">Experiencia</h2>
+
+      <ol class="timeline">
+        <li class="timeline__item timeline__item--current">
+          <article>
+            <p class="timeline__date"><time datetime="2026-01" data-i18n="date.jan2026">ene. 2026</time> <span data-i18n="exp.e1.until">– actualidad · Remoto</span></p>
+            <h3 class="timeline__role"><span data-i18n="exp.e1.role">Desarrollador BI (Ingeniería de Datos)</span> <span class="timeline__company">· Banco de Occidente</span></h3>
+            <p data-i18n="exp.e1.text">
+              Proyecto regulatorio de riesgo de tasa de interés sobre un Data Lake en AWS: pipelines ETL/ELT entre S3
+              y capas de reporte, normalización de Parquet, validación con Athena y dashboards de Power BI.
+            </p>
+            <p><strong data-i18n="exp.e1.achievement">Logro:</strong> <span data-i18n="exp.e1.achievement.text">migración de Pandas a Polars (−20 % en tiempos de ejecución).</span></p>
+            <ul class="chips" aria-label="Tecnologías" data-i18n-attr="aria-label:projects.tech">
+              <li>AWS S3</li>
+              <li>Athena</li>
+              <li>Python</li>
+              <li>Polars</li>
+              <li>Parquet</li>
+              <li>Power BI</li>
+            </ul>
+          </article>
+        </li>
+
+        <li class="timeline__item">
+          <article>
+            <p class="timeline__date"><time datetime="2025-06" data-i18n="date.jun2025">jun. 2025</time> – <time datetime="2025-11" data-i18n="date.nov2025">nov. 2025</time></p>
+            <h3 class="timeline__role"><span data-i18n="exp.e2.role">Ingeniero de Incidentes, Eventos y Problemas</span> <span class="timeline__company">· Banco Unión</span></h3>
+            <p data-i18n="exp.e2.text">SQL para análisis de causa raíz, ETL con Pentaho y reportes de SLA (100 % de cumplimiento).</p>
+            <ul class="chips" aria-label="Tecnologías" data-i18n-attr="aria-label:projects.tech">
+              <li>SQL</li>
+              <li>Pentaho</li>
+            </ul>
+          </article>
+        </li>
+
+        <li class="timeline__item">
+          <article>
+            <p class="timeline__date"><time datetime="2023-01" data-i18n="date.jan2023">ene. 2023</time> – <time datetime="2025-06" data-i18n="date.jun2025">jun. 2025</time></p>
+            <h3 class="timeline__role"><span data-i18n="exp.e3.role">Ingeniero Operador de Servicios TI</span> <span class="timeline__company">· Banco Unión</span></h3>
+            <p data-i18n="exp.e3.text">SQL (Oracle) para el cierre bancario diario, conciliación en IBM AS/400 y automatización de reprocesos.</p>
+            <ul class="chips" aria-label="Tecnologías" data-i18n-attr="aria-label:projects.tech">
+              <li>Oracle</li>
+              <li>SQL</li>
+              <li>IBM AS/400</li>
+            </ul>
+          </article>
+        </li>
+
+        <li class="timeline__item">
+          <article>
+            <p class="timeline__date"><time datetime="2015">2015</time> – <time datetime="2022">2022</time></p>
+            <h3 class="timeline__role"><span data-i18n="exp.e4.role">Técnico Mesa de Ayuda</span> <span class="timeline__company" data-i18n="exp.e4.company">· Banco Unión (2018–2022) y Banco W (2015–2017)</span></h3>
+          </article>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Educación y certificaciones -->
+    <section class="section" id="educacion" aria-labelledby="educacion-titulo">
+      <h2 class="section__title" id="educacion-titulo" data-i18n="edu.title">Educación y certificaciones</h2>
+
+      <!-- Dos columnas en tablet/escritorio: educación + idiomas | certificaciones -->
+      <div class="credentials-layout">
+        <div class="credentials-layout__col">
+          <h3 class="subsection__title" data-i18n="edu.education">Educación</h3>
+          <ul class="credentials">
+            <li class="credential">
+              <span class="credential__name" data-i18n="edu.specialization">Especialización en Visual Analytics y Big Data</span>
+              <span class="credential__meta">UNIR · 2026</span>
+            </li>
+            <li class="credential">
+              <span class="credential__name" data-i18n="edu.engineering">Ingeniería de Sistemas</span>
+              <span class="credential__meta" data-i18n="edu.camacho">Institución Universitaria Antonio José Camacho · 2022</span>
+            </li>
+            <li class="credential">
+              <span class="credential__name" data-i18n="edu.technology">Tecnología en Sistemas</span>
+              <span class="credential__meta">CECEP · 2016</span>
+            </li>
+          </ul>
+
+          <h3 class="subsection__title" data-i18n="edu.languages">Idiomas</h3>
+          <ul class="credentials">
+            <li class="credential">
+              <span class="credential__name" data-i18n="edu.spanish">Español</span>
+              <span class="credential__meta" data-i18n="edu.native">Nativo</span>
+            </li>
+            <li class="credential">
+              <span class="credential__name" data-i18n="edu.english">Inglés</span>
+              <span class="credential__meta" data-i18n="edu.englishLevel">B1, en formación activa</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="credentials-layout__col">
+          <h3 class="subsection__title" data-i18n="edu.certifications">Certificaciones</h3>
+          <ul class="credentials">
+            <li class="credential">
+              <span class="credential__name" data-i18n="cert.spark">Big Data y Spark: Ingeniería de datos con Python y PySpark</span>
+              <span class="credential__meta">Udemy · 2025</span>
+              <a class="credential__link" href="https://www.udemy.com/certificate/UC-5dbf4bc0-cb82-40e4-be65-1665a2bbd1ad/" target="_blank" rel="noopener noreferrer">
+                <span data-i18n="edu.verify">Verificar</span> <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-external"/></svg>
+              </a>
+            </li>
+            <li class="credential">
+              <span class="credential__name">AWS Cloud Quest: Cloud Practitioner – Training Badge</span>
+              <span class="credential__meta">AWS · 2025</span>
+              <a class="credential__link" href="https://www.credly.com/badges/8a8f83e4-cee8-4181-b214-726ee82d6f44/public_url" target="_blank" rel="noopener noreferrer">
+                <span data-i18n="edu.verify">Verificar</span> <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-external"/></svg>
+              </a>
+            </li>
+            <li class="credential">
+              <span class="credential__name" data-i18n="cert.powerbi">Power BI TOTAL: Analista de Datos Avanzado</span>
+              <span class="credential__meta">Udemy · 2024</span>
+              <a class="credential__link" href="https://www.udemy.com/certificate/UC-05f3aa38-2a9c-4830-a324-221fd8bbfbcc/" target="_blank" rel="noopener noreferrer">
+                <span data-i18n="edu.verify">Verificar</span> <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-external"/></svg>
+              </a>
+            </li>
+            <li class="credential">
+              <span class="credential__name">Ultimate GIT</span>
+              <span class="credential__meta">Udemy · 2024</span>
+              <a class="credential__link" href="https://www.udemy.com/certificate/UC-9ae9831f-dc0e-4dcb-b220-5296148cdccb/" target="_blank" rel="noopener noreferrer">
+                <span data-i18n="edu.verify">Verificar</span> <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-external"/></svg>
+              </a>
+            </li>
+            <li class="credential">
+              <span class="credential__name" data-i18n="cert.excel">Universidad Excel: Básico, Intermedio y Avanzado</span>
+              <span class="credential__meta">Udemy · 2024</span>
+              <a class="credential__link" href="https://www.udemy.com/certificate/UC-c52ea33c-acc7-446a-9888-bc55f5cf845f/" target="_blank" rel="noopener noreferrer">
+                <span data-i18n="edu.verify">Verificar</span> <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-external"/></svg>
+              </a>
+            </li>
+            <li class="credential">
+              <span class="credential__name">AI Fluency: Framework and Foundations</span>
+              <span class="credential__meta">Anthropic · 2026</span>
+            </li>
+            <li class="credential">
+              <span class="credential__name" data-i18n="cert.python">Curso de Programación en Python</span>
+              <span class="credential__meta">UNIR · 2025</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto (sin formularios) -->
+    <section class="section contact" id="contacto" aria-labelledby="contacto-titulo">
+      <h2 class="section__title" id="contacto-titulo" data-i18n="contact.title">Contacto</h2>
+      <p data-i18n="contact.text">¿Tienes una oportunidad o un proyecto de datos? Escríbeme por correo o LinkedIn y con gusto nos ponemos en contacto.</p>
+      <ul class="contact__links">
+        <li>
+          <a class="btn btn--primary" href="mailto:carloshoyosrios@gmail.com">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-mail"/></svg>
+            carloshoyosrios@gmail.com
+          </a>
+        </li>
+        <li>
+          <a class="btn" href="https://www.linkedin.com/in/carlosmario-hoyosrios" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin"/></svg>
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a class="btn" href="https://github.com/ingcarlosmariohoyos" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-github"/></svg>
+            GitHub
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <!-- main.js (initYear) pone el año actual; el 2026 fijo queda si JS no carga -->
+    <p>© <span id="year">2026</span> Carlos Mario Hoyos Ríos</p>
+    <p data-i18n="footer.made">Hecho con HTML, CSS y JS · Publicado en GitHub Pages</p>
+  </footer>
+</body>
+</html>

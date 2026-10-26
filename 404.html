@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Seguridad: misma política que index.html. Esta página no usa JavaScript -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <title>Página no encontrada · Page not found | Carlos Mario Hoyos Ríos</title>
+  <meta name="description" content="La página que buscas no existe. The page you are looking for does not exist.">
+  <!-- Una página de error no debe aparecer en Google -->
+  <meta name="robots" content="noindex">
+
+  <!-- Rutas absolutas (/...): GitHub Pages muestra esta página en cualquier dirección inexistente,
+       incluso dentro de subcarpetas, y así los estilos siempre cargan -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="notfound-page">
+  <!-- Bilingüe sin JS: los dos idiomas a la vez; lang="en" en el inglés para los lectores de pantalla -->
+  <main class="notfound">
+    <p class="notfound__code" aria-hidden="true">404</p>
+    <h1 class="notfound__title">
+      Página no encontrada
+      <span class="notfound__alt" lang="en">Page not found</span>
+    </h1>
+    <p>
+      La dirección que buscas no existe o cambió.
+      <span class="notfound__alt" lang="en">The address you are looking for does not exist or has changed.</span>
+    </p>
+    <a class="btn btn--primary" href="/">
+      Volver al inicio <span lang="en">· Back to home</span>
+    </a>
+  </main>
+</body>
+</html>
