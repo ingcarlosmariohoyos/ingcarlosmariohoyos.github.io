@@ -1,62 +1,31 @@
-# Portafolio de Carlos Mario Hoyos Ríos
+# Carlos Mario Hoyos Ríos — Portafolio
 
-Sitio web personal como **Ingeniero de Datos | Data Engineer**, publicado en GitHub Pages:
+Mi portafolio como **Ingeniero de Datos | Data Engineer**.
 
-👉 https://ingcarlosmariohoyos.github.io
+👉 **https://ingcarlosmariohoyos.github.io**
 
-## Qué contiene
+Perfil, stack, proyectos, experiencia y certificaciones en una sola página, en español e inglés.
 
-Una sola página con mi perfil, stack, proyectos, experiencia, educación, certificaciones y contacto. Bilingüe (español / inglés).
+## Qué demuestra este proyecto
 
-## Stack
+- **Sin frameworks ni dependencias:** HTML, CSS y JavaScript puro. La web no tiene paso de build ni carga nada de otros dominios.
+- **Lighthouse 100** en Performance, Accessibility, Best Practices y SEO (móvil y escritorio).
+- **Accesible:** HTML semántico, contraste AA, navegable con teclado y respeta `prefers-reduced-motion`.
+- **Seguro:** Content Security Policy estricta (solo `'self'`), sin scripts inline ni `innerHTML`.
+- **Bilingüe ES / EN** sin librerías, recordando el idioma elegido.
+- **82 pruebas automatizadas** que validan el comportamiento, la seguridad y que el contenido no tenga errores.
 
-- HTML5, CSS3 y JavaScript vanilla
-- Sin frameworks, sin dependencias y sin paso de build
-- Fuentes Inter y JetBrains Mono alojadas en el propio sitio (licencia OFL): no se carga nada de otros dominios
-- Content Security Policy estricta, accesible (WCAG AA) y Lighthouse 100 en las cuatro categorías
-- Publicado gratis con GitHub Pages
+## Decisiones técnicas
 
-## Estructura
+- **Mejora progresiva:** el contenido vive en el HTML y la página funciona sin JavaScript. El JS solo agrega comodidad (menú móvil, sección activa, idioma).
+- **Lógica separada del DOM:** las funciones de decisión, como "¿qué sección está activa?", son puras y se prueban sin navegador.
+- **Fuentes propias** (Inter y JetBrains Mono, licencia OFL): más rápido y sin depender de servicios externos.
 
-```
-/
-├── index.html        # Página principal
-├── 404.html          # Página de error
-├── css/styles.css    # Estilos
-├── js/main.js        # Interacción
-├── js/i18n.js        # Traducciones ES / EN
-├── assets/           # Imágenes, CV, fuentes y favicon
-└── tests/            # Pruebas (solo desarrollo)
-```
+## Desarrollo
 
-## Cómo correrlo localmente
-
-Opción 1: abrir `index.html` directamente en el navegador.
-
-Opción 2 (recomendada, se parece más a GitHub Pages): levantar un servidor local desde la carpeta del proyecto con Node:
+Requiere Node.js. Las pruebas usan `node:test` y `jsdom`, solo en desarrollo.
 
 ```bash
-npx http-server -p 8000 -c-1
-```
-
-Y abrir http://localhost:8000
-
-## Pruebas
-
-Las pruebas usan `node:test` (incluido en Node) y `jsdom` para simular el navegador. Son solo para desarrollo: la web no las carga.
-
-```bash
-npm install   # solo la primera vez
+npm install
 npm test
 ```
-
-- `tests/main.test.js`: comportamiento del JS (menú móvil, sección activa del índice, año del footer).
-- `tests/i18n.test.js`: cambio de idioma, traducciones completas y uso seguro de `localStorage`.
-- `tests/html.test.js`: estructura, accesibilidad básica, reglas de contenido y página 404.
-- `tests/security.test.js`: Content Security Policy, enlaces seguros y uso de APIs peligrosas.
-
-## Contacto
-
-- LinkedIn: https://www.linkedin.com/in/carlosmario-hoyosrios
-- GitHub: https://github.com/ingcarlosmariohoyos
-- Correo: carloshoyosrios@gmail.com
